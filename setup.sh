@@ -24,6 +24,15 @@ setup() {
     cmake -DCMAKE_INSTALL_PREFIX="${libpath}/csmith" .
     make
     make install
+
+    git clone --recurse-submodules -b v1.60.0 --depth 1 --shallow-submodules https://github.com/grpc/grpc
+    cd grpc
+    mkdir -p cmake/build
+    pushd cmake/build
+    cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=${libpath}/grpc ../..
+    make -j 4
+    make install
+    popd
   )
 }
 
