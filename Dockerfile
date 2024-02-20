@@ -10,4 +10,3 @@ ENV LIB_PATH /usr/local/src
 ENV PATH $PATH:/usr/lib/llvm-11/bin
 ENV PATH $PATH:${LIB_PATH}/csmith/bin
 ENV PATH $PATH:${LIB_PATH}/go/bin
-ENV PATH $PATH:${LIB_PATH}/grpc/bin
