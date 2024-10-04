@@ -24,6 +24,10 @@ setup() {
     cmake -DCMAKE_INSTALL_PREFIX="${libpath}/csmith" .
     make
     make install
+
+    curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+    bash nodesource_setup.sh
+    apt-get install -y nodejs
   )
 }
 
