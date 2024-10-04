@@ -13,7 +13,7 @@ setup() {
                  -o DPkg::options::="--force-confold" \
                  install curl cmake gcc git g++ m4 clang-11 lldb-11 libc++-11-dev libc++abi-11-dev clang-format-11 \
                  jq maven openjdk-8-jdk \
-                 python3-pip python3.8-venv python3-dev pkg-config
+                 python3-pip python3.8-venv python3-dev pkg-config redis zip sudo
 
     curl -L "https://golang.org/dl/go1.20.1.linux-amd64.tar.gz" -O
     tar xf go1.20.1.linux-amd64.tar.gz -C "${libpath}"
