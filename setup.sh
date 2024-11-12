@@ -15,8 +15,8 @@ setup() {
                  jq maven openjdk-8-jdk \
                  python3-pip python3.8-venv python3-dev pkg-config redis zip sudo
 
-    curl -L "https://golang.org/dl/go1.20.1.linux-amd64.tar.gz" -O
-    tar xf go1.20.1.linux-amd64.tar.gz -C "${libpath}"
+    curl -L "https://golang.org/dl/go1.23.1.linux-amd64.tar.gz" -O
+    tar xf go1.23.1.linux-amd64.tar.gz -C "${libpath}"
 
     CSMITH_VERSION="2.3.0"
     git clone --depth 1 --branch csmith-${CSMITH_VERSION} https://github.com/csmith-project/csmith.git
@@ -28,6 +28,8 @@ setup() {
     curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
     bash nodesource_setup.sh
     apt-get install -y nodejs
+
+    python3 -m pip install -r /opt/requirements.txt
   )
 }
 

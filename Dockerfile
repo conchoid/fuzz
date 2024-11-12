@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 
 COPY setup.sh /opt/setup.sh
+COPY requirements.txt /opt/requirements.txt
 
 RUN /opt/setup.sh /usr/local/src
 
