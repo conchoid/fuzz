@@ -5,6 +5,7 @@ set -e
 
 setup() {
   libpath="$1"
+  install_req_txt="$2"
 
   (
     export DEBIAN_FRONTEND=noninteractive
@@ -29,7 +30,9 @@ setup() {
     bash nodesource_setup.sh
     apt-get install -y nodejs
 
-    python3 -m pip install -r /opt/requirements.txt
+    if [ "${install_req_txt}" = "yes" ]; then
+      python3 -m pip install -r /opt/requirements.txt
+    fi
   )
 }
 
