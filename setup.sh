@@ -28,7 +28,9 @@ setup() {
 
     curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
     bash nodesource_setup.sh
-    apt-get install -y nodejs
+    apt install -y nodejs
+
+    apt install -y tesseract-ocr libtesseract-dev
 
     if [ "${install_req_txt}" = "yes" ]; then
       python3 -m pip install -r /opt/requirements.txt

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-version="0.1.9"
+version="0.1.10"
 
 # not install requirements.txt (lightweight)
 tag="conchoid/fuzz:${version}"
