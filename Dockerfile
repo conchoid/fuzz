@@ -4,6 +4,7 @@ ARG INSTALL_REQ_TXT=no
 
 COPY setup.sh /opt/setup.sh
 COPY requirements.txt /opt/requirements.txt
+COPY pip.conf /opt/pip.conf
 
 RUN /opt/setup.sh /usr/local/src ${INSTALL_REQ_TXT}
 

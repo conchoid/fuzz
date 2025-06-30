@@ -33,6 +33,8 @@ setup() {
     apt install -y tesseract-ocr libtesseract-dev
 
     if [ "${install_req_txt}" = "yes" ]; then
+      mkdir -p ~/.config/pip/
+      cp /opt/pip.conf ~/.config/pip/pip.conf
       python3 -m pip install -r /opt/requirements.txt
     fi
   )
