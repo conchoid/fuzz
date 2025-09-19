@@ -1,16 +1,16 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 ARG INSTALL_REQ_TXT=no
 
 COPY setup.sh /opt/setup.sh
 COPY requirements.txt /opt/requirements.txt
-COPY pip.conf /opt/pip.conf
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 RUN /opt/setup.sh /usr/local/src ${INSTALL_REQ_TXT}
 
-ENV CC /usr/bin/clang-17
-ENV CXX /usr/bin/clang++-17
+ENV CC /usr/bin/clang-14
+ENV CXX /usr/bin/clang++-14
 ENV LIB_PATH /usr/local/src
-ENV PATH $PATH:/usr/lib/llvm-17/bin
+ENV PATH $PATH:/usr/lib/llvm-14/bin
 ENV PATH $PATH:${LIB_PATH}/csmith/bin
 ENV PATH $PATH:${LIB_PATH}/go/bin

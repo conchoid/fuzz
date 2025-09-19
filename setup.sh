@@ -12,9 +12,9 @@ setup() {
     apt update
     yes '' | apt -y -o DPkg::options::="--force-confdef" \
                  -o DPkg::options::="--force-confold" \
-                 install curl cmake gcc git g++ m4 clang-17 lldb-17 libc++-17-dev libc++abi-17-dev clang-format-17 \
+                 install curl cmake gcc git g++ m4 clang-14 lldb-14 libc++-14-dev libc++abi-14-dev clang-format-14 \
                  jq maven openjdk-8-jdk \
-                 python3-pip python3.12-venv python3.12-dev pkg-config redis zip sudo
+                 python3-pip python3.11-venv python3.11-dev pkg-config redis zip sudo
 
     curl -L "https://golang.org/dl/go1.23.1.linux-amd64.tar.gz" -O
     tar xf go1.23.1.linux-amd64.tar.gz -C "${libpath}"
@@ -34,7 +34,6 @@ setup() {
 
     if [ "${install_req_txt}" = "yes" ]; then
       mkdir -p ~/.config/pip/
-      cp /opt/pip.conf ~/.config/pip/pip.conf
       python3 -m pip install -r /opt/requirements.txt
     fi
   )
