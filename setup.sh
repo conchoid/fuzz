@@ -16,8 +16,9 @@ setup() {
                  jq maven openjdk-8-jdk \
                  python3-pip python3.11-venv python3.11-dev pkg-config redis zip sudo
 
-    curl -L "https://golang.org/dl/go1.23.1.linux-amd64.tar.gz" -O
-    tar xf go1.23.1.linux-amd64.tar.gz -C "${libpath}"
+    GO_VERSION="1.25.11"
+    curl -L "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" -O
+    tar xf "go${GO_VERSION}.linux-amd64.tar.gz" -C "${libpath}"
 
     CSMITH_VERSION="2.3.0"
     git clone --depth 1 --branch csmith-${CSMITH_VERSION} https://github.com/csmith-project/csmith.git
