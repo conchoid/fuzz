@@ -16,7 +16,7 @@ setup() {
                  jq maven openjdk-8-jdk \
                  python3-pip python3.12-venv python3.12-dev pkg-config redis zip sudo
 
-    GO_VERSION="1.25.11"
+    GO_VERSION="1.27.2"
     curl -L "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" -O
     tar xf "go${GO_VERSION}.linux-amd64.tar.gz" -C "${libpath}"
 
